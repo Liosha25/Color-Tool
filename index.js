@@ -78,10 +78,6 @@ const alterColor = (hex, percentage) => {
 }
 
 const increaseWithin0To255 = (hex, amount) => {
-  // const newHex = hex + amount;
-  // if(newHex > 255) return 255;
-  // if(newHex < 0) return 0;
-  // return newHex;
   return Math.min(255, Math.max(0, hex + amount));
 }
 
@@ -91,8 +87,7 @@ slider.addEventListener('input', () => {
   if(!isValidHex(hexInput.value)) return;
   
   sliderText.textContent = `${slider.value}%`;
-  //calulcate the appropriate value for the color alteration
-  //between positive and negative
+
   const valueAddition  = 
     toggleBtn.classList.contains('toggled') ? 
     -slider.value 
